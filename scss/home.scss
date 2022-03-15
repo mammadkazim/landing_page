@@ -1,0 +1,525 @@
+@import 'variables';
+@import 'mixins';
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@200;300;400;500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    background: url('../assets/img/resized-bg.png') no-repeat right top;
+    font-family: Encode Sans, sans-serif;
+    @include font-style (30px, $primary-weight, initial, initial);
+    letter-spacing: -0.6px;
+}
+
+section {
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+header {
+    padding-top: 33px;
+    @include display (flex, initial, center);
+}
+
+.logo {
+    @include font-style (30px, 800, initial, $primary-color);
+    margin-right: 61px;
+}
+
+.nav {
+    @include display (flex, space-between, center);
+    width: 100%;
+    @include font-style (16px, $primary-weight, initial, $nav-color);
+}
+
+.hamburger {
+    display: none;
+
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background-color: black;
+    }
+}
+
+ul {
+    display: flex;
+
+    li:not(:last-child) {
+        margin-right: 53px;
+    }
+}
+
+//////// second section styling 
+.second-section {
+    margin-top: 189px;
+}
+
+h1 {
+    @include font-style (60px, 700, 87px, $primary-color);
+    width: 40%;
+}
+
+.stores {
+    margin: 34px 0 194px 0;
+    display: flex;
+    gap: 9px;
+}
+
+//////// location section styling 
+.location-section {
+    @include display (flex, space-between, center);
+    padding-top: 123px;
+    padding-bottom: 123px;
+    background-color: #5E40A4;
+    width: 100%;
+    color: #ffffff;
+
+    p {
+        @include font-style (20px, 500, 25px, inherit);
+    }
+
+    button {
+        margin-right: 143px;
+        padding: 18px 64px;
+        @include font-style (25px, 500, 31px, $primary-color);
+        color: $primary-color;
+        border-radius: 7px;
+        border-style: none;
+    }
+}
+
+h2 {
+    @include font-style (40px, 700, 50px, inherit);
+    margin-bottom: 14px;
+}
+
+.pet-section {
+    @include display (flex, space-between, center);
+    padding-top: 47px;
+    padding-bottom: 15px;
+}
+
+//////// categories section styling 
+.categ-section {
+    margin-bottom: 140px;
+
+    h2 {
+        color: $primary-color;
+        margin-bottom: 0
+    }
+
+    .categ-cards {
+        @include display (flex, space-between, center);
+        margin-top: 40px;
+
+        :not(:last-child) {
+            margin-right: 20px;
+        }
+
+        .card {
+            @include card-categ;
+
+            &-heading {
+                @include display (flex, space-between, center);
+                @include font-style (30px, 500, 37px, #ffffff);
+                text-transform: capitalize;
+                margin-bottom: 15px;
+            }
+
+            p {
+                margin-right: (80px-34px);
+                @include font-style (18px, 400, 25px, #ffffff);
+                margin-bottom: 26px;
+            }
+
+            a {
+                @include font-style (18px, 500, 25px, #ffffff);
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+//////// feedback section styling 
+.feedback-section {
+    margin-bottom: 211px;
+
+    h2 {
+        color: $primary-color;
+        margin-bottom: 0
+    }
+
+    .feedback-cards {
+        @include display (flex, space-between, center);
+        margin-top: 40px;
+
+        :not(:last-child) {
+            margin-right: 20px;
+        }
+
+        .feedback-card {
+            @include card-feed;
+
+            &-icons-container {
+                @include display (flex, initial, center);
+                margin-bottom: 22px;
+
+                img {
+                    margin-right: 8px;
+                }
+            }
+
+            &-heading {
+                @include font-style (20px, 500, 25px, $second-color);
+                margin-bottom: 10px;
+            }
+
+            h5+p {
+                @include font-style (16px, 400, 20px, #7C7C7C);
+                margin-bottom: 26px;
+            }
+
+            .author {
+                @include display (flex, flex-start, center);
+                @include font-style (14px, 500, 17px, $second-color);
+
+                img {
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+}
+
+///////footer
+footer {
+    background-color: $primary-color;
+    padding: 38px 70px 46px 70px;
+    @include display (flex, space-between, center);
+
+    .right {
+        h4 {
+            @include font-style (40px, 800, 51px, #ffffff);
+            margin-bottom: 38px;
+        }
+
+        .stores {
+            @include display (flex, flex-start, center);
+            margin-bottom: 56px;
+
+            &:first-child {
+                margin-right: 9px;
+            }
+        }
+
+        p {
+            @include font-style (20px, 500, 25px, #ffffff);
+        }
+    }
+
+    .left {
+        width: 30%;
+
+        ul {
+            @include display (flex, space-between, center);
+            flex-wrap: wrap;
+            @include font-style (20px, 500, 25px, #ffffff);
+            gap: 20px;
+        }
+
+        .social-media {
+            margin-top: 45px;
+            @include display (flex, flex-start, center);
+
+            :not(:last-child) {
+                margin-right: 39px;
+            }
+        }
+    }
+}
+
+
+// for mobile
+@media (max-width: 768px) {
+    .nav {
+        @include display (block, initial, initial);
+        @include font-style (16px, $primary-weight, initial, $nav-color);
+    }
+
+    section {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .langbar {
+        display: none;
+    }
+
+    .navmenu {
+        position: fixed;
+        left: -100%;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+
+        .nav-item {
+            margin: 16px 0;
+        }
+    }
+
+    .navmenu.active {
+        left: 0;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 10px;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    ////// second section styling 
+    .second-section {
+        margin-top: 70px;
+
+        h1 {
+            text-align: center;
+            @include font-style (50px, 700, 62px, $primary-color);
+            width: 45%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+
+    .stores {
+        margin-top: 25px;
+        margin-bottom: 55px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    //location section styling 
+    .location-section {
+        text-align: center;
+        @include display (flex, space-between, center);
+        flex-direction: column;
+        padding-top: 30px;
+        padding-bottom: 34px;
+        background-color: #5E40A4;
+        width: 100%;
+        color: #ffffff;
+
+        p {
+            @include font-style (16px, 400, 20px, inherit);
+        }
+
+        button {
+            margin: 24px auto 0 auto;
+            padding: 18px 64px;
+            @include font-style (18px, 600, 24px, $primary-color);
+        }
+
+        h2 {
+            @include font-style (30px, 700, 35px, inherit);
+            margin-bottom: 14px;
+        }
+    }
+
+
+    .pet-section {
+        flex-direction: column;
+        margin-top: 47px;
+
+        h1 {
+            width: 50%;
+            text-align: center;
+            @include font-style (50px, 700, 62px, $primary-color);
+            margin-bottom: 10px;
+        }
+    }
+
+    //////// categories section styling 
+    .categ-section {
+        margin: 15px 16px 45px 16px;
+
+        h2 {
+            @include font-style (25px, 600, 32px, $primary-color);
+        }
+
+        .categ-cards {
+            flex-direction: column;
+            margin-top: 22px;
+            gap: 20px;
+
+            .card {
+                margin-right: 0;
+
+                &-heading {
+                    @include font-style (20px, 500, 25px, #ffffff);
+                    margin-bottom: 23px;
+                }
+
+                @include font-style (16px, 400, 22px, #ffffff);
+            }
+        }
+    }
+
+    //////// feedback section styling 
+    .feedback-section {
+        margin-bottom: 70px;
+
+        h2 {
+            @include font-style (25px, 600, 32px, $primary-color);
+        }
+
+        .feedback-cards {
+            @include display (flex, space-between, center);
+            flex-direction: column;
+            margin-top: 21px;
+            gap: 18px;
+
+            .feedback-card {
+                margin-right: 0;
+            }
+        }
+    }
+
+    ///////footer
+    footer {
+        background-color: $primary-color;
+        padding: 40px;
+        @include display (flex, space-between, initial);
+        flex-direction: column;
+
+        .right {
+            margin-bottom: 36px;
+
+            h4 {
+                @include font-style (28px, 600, 35px, #ffffff);
+                margin-bottom: 25px;
+            }
+
+            .stores {
+                @include display (flex, space-around, center);
+                flex-direction: row;
+                margin-bottom: 36px;
+            }
+
+            p {
+                @include font-style (20px, 500, 25px, #ffffff);
+            }
+        }
+
+        .left {
+            width: 100%;
+
+            ul {
+                @include display (flex, space-between, center);
+                flex-wrap: wrap;
+                @include font-style (20px, 500, 25px, #ffffff);
+            }
+
+            .social-media {
+                margin-top: 35px;
+                @include display (flex, center, center);
+                gap: 20px;
+            }
+        }
+    }
+}
+
+// for tabs
+@media (max-width: 900px) and (min-width:768px) {
+    .second-section {
+        margin-top: 19px;
+    }
+
+    .pet-section {
+        h1 {
+            width: 70%;
+            text-align: center;
+            @include font-style (50px, 600, 62px, $primary-color);
+        }
+
+        img {
+            width: 70%;
+        }
+    }
+
+    .location-section {
+        text-align: center;
+        flex-direction: column;
+        padding: 60px;
+
+        button {
+            margin: 24px auto 0 auto;
+        }
+    }
+
+    //////// categories section styling 
+    .categ-section {
+        .categ-cards {
+            flex-wrap: wrap;
+            justify-content: space-around;
+
+            .card {
+                width: 40%;
+                margin-bottom: 50px;
+            }
+        }
+    }
+
+    //////// feedback section styling 
+    .feedback-section {
+        margin-bottom: 70px;
+
+        h2 {
+            @include font-style (25px, 600, 32px, $primary-color);
+        }
+
+        .feedback-cards {
+            @include display (flex, space-around, center);
+            flex-wrap: wrap;
+            margin-top: 21px;
+
+            .feedback-card {
+                margin-bottom: 50px;
+                width: 40%;
+            }
+        }
+    }
+}

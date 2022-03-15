@@ -1,0 +1,24 @@
+@mixin card-categ{
+    background: $primary-color;
+    padding: 0 34px 32px 34px;
+    color: #ffffff;
+    border-radius: 10px;
+}
+@mixin card-feed{
+    padding: 24px 24px 43px 27px;
+    color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid rgba(94, 64, 164, 0.18);
+    box-shadow: 0px 15px 30px rgba(94, 64, 164, 0.14);
+}
+@mixin font-style ($s,$w,$lh,$color) {
+    font-size: $s;
+    font-weight: $w;
+    line-height: $lh;
+    color: $color;
+}
+@mixin display ($flex,$justify,$align){
+    display: $flex;
+    justify-content: $justify;
+    align-items: $align;
+}
